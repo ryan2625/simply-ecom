@@ -1,0 +1,70 @@
+.home-container{
+    height: 130vh;
+    max-width: 1300px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 130px;
+}
+
+.home-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "home home skin top"
+    "home home skin bot";
+    gap: 1rem;
+    padding: 2rem;
+    height: 500px;
+}
+
+.filter{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    transition: background-color .3s ease-in-out;
+}
+
+.filter:hover{
+    background-color: rgba(0, 0, 0, .35);
+    transition: background-color .3s ease-in-out;
+}
+
+.home-grid > div{
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0,0 , .5)
+}
+
+.home-grid > div > p{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-left: 1.5rem;
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.home {
+    background-image: url("../data/images/home.jpg");
+    grid-area: home;
+}
+
+.skin {
+    background-image: url("../data/images/skin.jpg");
+    grid-area: skin;
+}
+
+.kitchen {
+    background-image: url("../data/images/kitchen.jpg");
+    grid-area: top;
+}
+
+.electronics {
+    background-image: url("../data/images/electronics.webp");
+    grid-area: bot;
+}
