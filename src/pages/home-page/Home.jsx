@@ -1,6 +1,7 @@
 import React from 'react'
 import "../../styles/Home.css"
-import  image1  from "../../data/images/bannerImages/banner1.jpg"
+import image1  from "../../data/images/bannerImages/banner1.jpg"
+import image2 from "../../data/images/bannerImages/banner2.jpg"
 
 function Home() {
     return (
@@ -34,7 +35,7 @@ function Home() {
             </div>
 
             <div className="featured-products">
-            <img src={ image1 } alt="" />
+            <img src={ image2 } alt="" />
                 <div className="description">
                     <h1>Living in harmony</h1>
                     <p>Our wide selection of products will always leave you satisfied. See what we made special for you.</p>

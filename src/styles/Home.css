@@ -1,5 +1,4 @@
 .home-container{
-    height: 130vh;
     max-width: 1300px;
     display: flex;
     flex-direction: column;
@@ -19,7 +18,7 @@
     "home home skin top"
     "home home skin bot";
     gap: 1rem;
-    height: 500px;
+    min-height: 500px;
 }
 
 .filter{
@@ -77,7 +76,7 @@
 }
 
 .featured-products > *{
-    flex: 0 0 50%
+    width: 50%;
 }
 
 .description{
@@ -97,8 +96,3 @@
     font-size: large;
     padding: 1rem 1.5rem;
 }
-
-.featured-products > img {
-    max-width: 300px;
-}
-

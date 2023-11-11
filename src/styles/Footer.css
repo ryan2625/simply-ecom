@@ -1,0 +1,93 @@
+.footer{
+    display: flex;
+    height: 300px;
+    width: 100%;
+    background-color: #1a1a36
+}
+
+.links1{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    flex-basis: 33%;
+    
+}
+
+.align > h1{
+    color: white;
+    margin-bottom: -2rem;
+    position: relative;
+    width: fit-content;
+    margin-bottom: 2rem;
+}
+
+.align{
+    display: flex;
+    flex-direction: column;
+}
+
+.shopper::before{
+    content: "";
+    width: 100%;
+    position: absolute;
+    bottom: 0rem;
+    left: 0;
+    border-bottom: 1px solid white;
+    color: white;
+}
+
+
+
+.effecter{
+    position: relative;
+    white-space: nowrap;
+    color: white !important;
+}
+
+.effecter::before{
+    content: "";
+    width: 0%;
+    position: absolute;
+    bottom: 0rem;
+    left: 0;
+    border-bottom: 1px solid white;
+    color: white;
+}
+
+.effecter:hover::before{
+    width: 100%;
+}
+
+.socialIcon{
+    transform: scale(2);
+    margin: 2rem;
+    transition: all 0.5s ease-in-out !important;
+    color: white !important;
+}
+
+.socialIcon:hover{
+    transform: scale(3);
+    transition: all 0.5s ease-in-out;
+}
+
+.socials{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .socials{
+        flex-direction: column;
+    }
+
+    .socialIcon{
+        margin: 1rem;
+    }
+
+    .footer{
+        justify-content: space-around;
+    }
+}

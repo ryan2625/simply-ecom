@@ -41,4 +41,42 @@ nav > ul{
 nav > ul > li:nth-child(3){
     transform: scale(1.2);
     margin-top: .2rem;
+    cursor: pointer;
+}
+
+.overflower{
+    height: 0px;
+}
+
+.overlay{
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    transition: all .3s ease-in-out;
+}
+
+.none {
+    transition: all .3s ease-in-out;
+    display: none;
+}
+
+.sidebar{
+    transition: all .3s ease-in-out;
+    z-index: 1001;
+    top: 0;
+    right: 0;
+    position: fixed;
+    width: 35vw;
+    height: 100%;
+    background-color: white;
+    transform: translateX(0%);
+}
+
+.sidebar-hidden{
+    transform: translateX(100%);
+    transition: all .3s ease-in-out;
 }
