@@ -8,6 +8,8 @@ function Navbar() {
 
     const [fix, setFix] = useState(false)
 
+    const [shown, setShown] = useState(false)
+
     function setFixed(){
         if (window.scrollY >= 200) {
             setFix(true)
@@ -18,7 +20,12 @@ function Navbar() {
 
     window.addEventListener('scroll', setFixed)
 
-  return (
+  return (<>
+    <div className={shown ? "shopping-cart" : "none"}>
+        <div className="overlay"></div>
+        <div className="sidebar"></div>
+        
+    </div>
     <div className={"navbar " + (fix ? "navbar-scrolled" : "navbar-default")}>
         <nav>
             <img src={logo} alt="" />
@@ -34,11 +41,12 @@ function Navbar() {
                     </Link>
                 </li>
                 <li>
-                    <ShoppingCartIcon />
+                    <ShoppingCartIcon onClick={() => setShown(!shown)}/>
                 </li>
             </ul>
         </nav>
     </div>
+    </>
   )
 }
 
