@@ -32,10 +32,12 @@ function Navbar() {
     </div>
     <div className={"navbar " + (fix ? "navbar-scrolled" : "navbar-default")}>
         <nav>
-            <img src={logo} alt="" />
+            <Link to="/">
+                <img src={logo} alt="" />
+            </Link>
             <ul>
                 <li>
-                    <Link>
+                    <Link to="/categories">
                         Categories
                     </Link>
                 </li>

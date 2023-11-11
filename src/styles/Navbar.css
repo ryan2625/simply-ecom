@@ -5,7 +5,7 @@ nav {
     align-items: center;
 }
 
-nav > img {
+nav > a > img {
     width: 400px;
     height: auto;
 }

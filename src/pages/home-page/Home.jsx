@@ -1,7 +1,7 @@
 import React from 'react'
 import "../../styles/Home.css"
-import image1  from "../../data/images/bannerImages/banner1.jpg"
-import image2 from "../../data/images/bannerImages/banner2.jpg"
+import image1  from "../../data/img/bannerImages/banner1.jpg"
+import image2 from "../../data/img/bannerImages/banner2.jpg"
 
 function Home() {
     return (

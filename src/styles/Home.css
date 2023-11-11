@@ -52,22 +52,22 @@
 }
 
 .home {
-    background-image: url("../data/images/homeGrid/home.jpg");
+    background-image: url("../data/img/homeGrid/home.jpg");
     grid-area: home;
 }
 
 .skin {
-    background-image: url("../data/images/homeGrid/skin.jpg");
+    background-image: url("../data/img/homeGrid/skin.jpg");
     grid-area: skin;
 }
 
 .kitchen {
-    background-image: url("../data/images/homeGrid/kitchen.jpg");
+    background-image: url("../data/img/homeGrid/kitchen.jpg");
     grid-area: top;
 }
 
 .electronics {
-    background-image: url("../data/images/homeGrid/electronics.webp");
+    background-image: url("../data/img/homeGrid/electronics.webp");
     grid-area: bot;
 }
 

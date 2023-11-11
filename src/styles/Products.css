@@ -1,0 +1,9 @@
+.prod-container img{
+    width: 100%;
+}
+
+.prod-container{
+    border: 1px solid rgb(151, 151, 151);
+    padding: 1rem;
+    cursor: pointer;
+}
