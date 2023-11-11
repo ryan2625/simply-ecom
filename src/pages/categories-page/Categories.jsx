@@ -27,18 +27,18 @@ function Categories() {
       </div>
       <h1>All Products</h1>
       <ul>
-        <li onClick={ () => handleFilter("All")}>All</li>
-        <li onClick={ () => handleFilter("furniture")}>Furniture</li>
-        <li onClick={ () => handleFilter("skin-care")}>Skincare</li>
-        <li onClick={ () => handleFilter("kitchen")}>Kitchen</li>
-        <li onClick={ () => handleFilter("electronic")}>Electronics</li>
-        <li onClick={ () => handleFilter("lamp")}>Lamps</li>
-        <li onClick={ () => handleFilter("chair")}>Chairs</li>
+        <li onClick={() => handleFilter("All")}>All</li>
+        <li onClick={() => handleFilter("furniture")}>Furniture</li>
+        <li onClick={() => handleFilter("skin-care")}>Skincare</li>
+        <li onClick={() => handleFilter("kitchen")}>Kitchen</li>
+        <li onClick={() => handleFilter("electronic")}>Electronics</li>
+        <li onClick={() => handleFilter("lamp")}>Lamps</li>
+        <li onClick={() => handleFilter("chair")}>Chairs</li>
       </ul>
       <div className="product-grid">
         {products.map((item, index) => {
-          return <Products key={index} price={item.price} name={item.description} img={item.img} />
-  })}
+          return <Products key={index} price={item.price} name={item.description} img={item.img} path={item.id - 1} />
+        })}
       </div>
     </div>
   )
