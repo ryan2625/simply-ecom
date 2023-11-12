@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { useCategory } from '../../contexts/categoryContext'
+import { Link } from 'react-router-dom'
 import "../../styles/Categories.css"
 import image1 from "../../data/img/bannerImages/banner3.jpg"
 import { items } from '../../data/products/productData'
@@ -41,8 +42,13 @@ function Categories() {
       <div className="categories-banner">
         <img src={image1} alt="" />
       </div>
-      <h1>All Products</h1>
-      <ul>
+      <div className="shop-by-header">
+        <h1>Shop By Category</h1>
+      </div>
+      <ul className='uling'>
+        <Link to="/">
+          &#60;- Home
+        </Link>
         <li onClick={() => handleFilter("All")}>All</li>
         <li onClick={() => handleFilter("furniture")}>Furniture</li>
         <li onClick={() => handleFilter("skin-care")}>Skincare</li>

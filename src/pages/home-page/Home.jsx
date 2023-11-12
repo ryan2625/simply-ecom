@@ -56,7 +56,6 @@ function Home() {
                 </div>
                 <Splide aria-label="My Favorite Images"
                       options={ {
-                        rewind: true,
                         perPage: 5,
                         perMove: 1,
                         gap   : '1rem',

@@ -29,7 +29,7 @@ nav > ul{
 }
 
 .navbar-scrolled{
-    height: 90px;
+    height: 70px;
     transition: height .3s ease-in-out;
 }
 
@@ -70,13 +70,84 @@ nav > ul > li:nth-child(3){
     top: 0;
     right: 0;
     position: fixed;
-    width: 35vw;
+    width: 500px;
     height: 100%;
     background-color: white;
     transform: translateX(0%);
+    overflow-y: scroll;
+    overflow-X: hidden;
 }
 
 .sidebar-hidden{
     transform: translateX(100%);
     transition: all .3s ease-in-out;
+}
+
+.shopping-cart-list{
+    margin-top: 2rem;
+}
+
+.cart-prods{
+    position: relative;
+}
+
+.linked{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    margin-bottom: 1rem;
+    width: 90%;
+}
+
+.linked::after{
+    content: " ";
+    height: 3px;
+    width: 90%;
+    top: -.6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    background-color: #919191;
+}
+
+.linked:hover{
+    filter: brightness(90%);
+    background-color: rgb(248, 248, 248);
+}
+
+.linked > img{
+    width: 100px;
+    height: auto;
+}
+
+.linked > h4{
+    margin-right: auto;
+}
+
+.remove-item{
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: .3rem;
+    transform: scale(1.2);
+    z-index: 999999;
+}
+
+.remove-item:hover{
+    color: red;
+}
+
+#closer{
+    position: absolute;
+    top: .6rem;
+    right: .6rem;
+    cursor: pointer;
+    transform: scale(1.6);
+    border: 1px solid rgb(99, 99, 99);
+}
+
+#shopping-header{
+   text-align: center;
 }

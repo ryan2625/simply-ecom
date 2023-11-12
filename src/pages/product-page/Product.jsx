@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { items } from '../../data/products/productData'
 import { useCart } from '../../contexts/cartContext'
 import "../../styles/Product.css"
@@ -29,8 +29,7 @@ function Product() {
   }
 
   function addCart() {
-    var description2 = item.description;
-    var newItem = {description2, quantity}
+    var newItem = {item, quantity}
     setCart([...cart, newItem]) 
   }
 
@@ -42,10 +41,12 @@ function Product() {
     <div className="product-page">
       <div className="item-container">
         {/*<h1>{item.description}</h1>*/}
+        <Link to="/categories">
+          &#60;- Back to Categories
+        </Link>
         <img src={item.img} alt="" />
         <div className="item-info">
           <h1>{item.description}</h1>
-          <p>${item.price}</p>
           <p>{item.specs}</p>
           <div className="quantity">
             <p>Quantity: </p>

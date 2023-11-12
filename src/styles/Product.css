@@ -9,6 +9,7 @@
     display: flex;
     margin: 2rem auto;
     background-color: #e8e8e8;
+    position: relative;
 }
 
 .item-info{
@@ -54,4 +55,11 @@
     font-size: 20px;
     cursor: pointer;
     align-self: center;
+}
+
+.item-container > a{
+    position: absolute;
+    width: fit-content;
+    text-decoration: underline;
+    font-size: larger;
 }

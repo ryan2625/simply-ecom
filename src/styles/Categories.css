@@ -16,7 +16,26 @@
     margin: 2rem auto;
 }
 
-.categories > h1{
+.shop-by-header{
+    width: fit-content;
+    margin: 0 auto;
+    position: relative;
+}
+
+.uling{
+    position: relative;
+}
+
+.uling > a {
+    position: absolute;
+    top: .5rem;
+    left: -5rem;
+    font-size: large;
+    text-decoration: underline;
+}
+
+
+.shop-by-header > h1{
     text-align: center;
 }
 
