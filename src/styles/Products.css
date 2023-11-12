@@ -1,8 +1,24 @@
 .prod-container img{
     width: 100%;
+    aspect-ratio: 1/1;
 }
 
 .prod-container{
     border: 1px solid rgb(151, 151, 151);
     cursor: pointer;
+    padding: 1rem;
+    height: 85%;
+}
+
+.prod-info{
+    position: relative;
+}
+
+.prod-info::before{
+    content: " ";
+    height: 2px;
+    width: 100%;
+    background-color: #5d5d5d4a;
+    position: absolute;
+    top: -20px;
 }

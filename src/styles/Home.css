@@ -1,3 +1,5 @@
+
+
 .home-container{
     max-width: 1300px;
     display: flex;
@@ -69,6 +71,35 @@
 .electronics {
     background-image: url("../data/img/homeGrid/electronics.webp");
     grid-area: bot;
+}
+
+.headliner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.products-slider{
+    max-width: 1115px;
+    align-self: center;
+}
+
+.splide__arrow{
+    transform: scale(2);
+}
+
+.splide__arrow--next{
+    right: -3rem;
+    top: 23.6%;
+    border-radius: 0;
+    height: 46.9%;
+}
+
+.splide__arrow--prev{
+    left: -3rem;
+    top: 23.6%;
+    border-radius: 0;
+    height: 46.9%;
 }
 
 .featured-products{

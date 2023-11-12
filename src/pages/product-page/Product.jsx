@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { items } from '../../data/products/productData'
+import { useCart } from '../../contexts/cartContext'
 import "../../styles/Product.css"
 
 function Product() {
 
   const { product } = useParams()
+  
+  const { cart, setCart } = useCart()
 
   var [quantity, setQuantity] = useState(1)
 
@@ -14,7 +17,6 @@ function Product() {
   var [price, setPrice] = useState(item.price)
 
   function setQuantityFunct(val){
-    var pendingState = val
     if (quantity === 1 && val === -1){
       return
     }
@@ -25,6 +27,16 @@ function Product() {
     }
     setPrice(price => (item.price * (quantity + val)))
   }
+
+  function addCart() {
+    var description2 = item.description;
+    var newItem = {description2, quantity}
+    setCart([...cart, newItem]) 
+  }
+
+    useEffect(() => {
+      window.scrollTo(0,0);
+  }, [])
 
   return (
     <div className="product-page">
@@ -42,7 +54,7 @@ function Product() {
             <button onClick={() => setQuantityFunct(1)}>+</button>
             <p>${price}</p>
           </div>
-          <button>Add to Cart</button>
+          <button onClick={addCart}>Add to Cart</button>
         </div>
       </div>
     </div>

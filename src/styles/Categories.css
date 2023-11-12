@@ -4,6 +4,7 @@
 
 .categories-banner{
     width: 80%;
+    aspect-ratio: 655/282;
     display: grid;
     place-items: center;
     margin: 0 auto;

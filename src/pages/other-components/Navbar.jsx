@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useCart } from '../../contexts/cartContext'
 import "../../styles/Navbar.css"
 import logo from "./logo.png" 
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import CloseIcon from '@mui/icons-material/Close';
 import Close from '@mui/icons-material/Close';
 
 function Navbar() {
+
+    const { cart, setCart } = useCart()
 
     const [fix, setFix] = useState(false)
 
@@ -27,6 +29,13 @@ function Navbar() {
         <div className={shown ? "overlay" : "overlay none"}></div>
         <div className={shown ? "sidebar" : "sidebar sidebar-hidden"}>
             <Close  onClick={() => setShown(!shown)}/>
+            {cart.map((itemMap, index) => {
+                return (<>
+                    <h1>{itemMap.description2}</h1>
+                    <h2>{itemMap.quantity}</h2>
+                    </>
+                )
+            })}
         </div>
         
     </div>
@@ -38,12 +47,12 @@ function Navbar() {
             <ul>
                 <li>
                     <Link to="/categories">
-                        Categories
+                        CATEGORIES
                     </Link>
                 </li>
                 <li>
                     <Link>
-                        Reviews
+                        REVIEWS
                     </Link>
                 </li>
                 <li>
