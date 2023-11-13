@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { items } from '../../data/products/productData'
 import { useCart } from '../../contexts/cartContext'
 import "../../styles/Product.css"
+import CheckIcon from '@mui/icons-material/Check';
 
 function Product() {
+
+  const confirmation = useRef(null)
 
   const { product } = useParams()
 
@@ -30,13 +33,33 @@ function Product() {
     setPrice(price => (item.price * (quantity + val)))
   }
 
+  /**
+   *  This method adds the new item to the cart. I also show the
+   *  confirmation modal telling the user that they have successfully
+   *  added the item to the cart. 
+   * 
+   *  I initially used a setTimeout function to remove the
+   *  confirmation modal after 2 seconds by setting confirmation
+   *  .current.className to confirmation, making it slide off the
+   *  screen. The problem here was that I was referring to the element
+   *  confirmation with the useRef hook. This ref is only available
+   *  in the product component causing an error if I switched pages
+   *  while the modal was open. Fixed by using an animation so I 
+   *  won't need the ref.
+   * 
+   */
+
   function addCart() {
     var newItem = { item, quantity }
     setCart([...cart, newItem])
+    confirmation.current.className = "confirmation"
+    setTimeout(() => {
+      confirmation.current.className = "confirmation confirmation-show" 
+    }, 50)
     setAdded(!added)
   }
 
-  // Don't ask me about how efficient this algo is... at least I didn't use chatGPT (:
+  // Don't ask me about how efficient this algo is... at least I didn't use chatGPT for this project (:
 
   useEffect(() => {
     var accurateCart = []
@@ -60,6 +83,9 @@ function Product() {
       }
     })
     setCart(newCart)
+
+    
+
 }, [added])
 
   useEffect(() => {
@@ -68,6 +94,9 @@ function Product() {
 
   return (
     <div className="product-page">
+      <div className="confirmation" ref={confirmation}>
+        <h4>Added to cart</h4>  <span><CheckIcon /></span>
+      </div>
       <div className="item-container">
         {/*<h1>{item.description}</h1>*/}
         <Link to="/categories">
