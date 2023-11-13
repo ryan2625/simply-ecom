@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useCart } from '../../contexts/cartContext'
 import "../../styles/Navbar.css"
@@ -15,6 +15,8 @@ function Navbar() {
 
     const [shown, setShown] = useState(false)
 
+    const [quantity, setQuantity] = useState(null)
+
     function setFixed() {
         if (window.scrollY >= 200) {
             setFix(true)
@@ -28,6 +30,7 @@ function Navbar() {
             return (item.item.id !== remove.item.id) 
         })
         setCart(newCart)
+        console.log(newCart)
     }
 
     window.addEventListener('scroll', setFixed)
