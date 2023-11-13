@@ -20,6 +20,8 @@ function Navbar() {
 
     const [totalQuantity, setTotalQuantity] = useState(0)
 
+    //Use REDUCE function here
+
     useEffect(() => {
         var price = 0
         var total = 0
@@ -32,7 +34,6 @@ function Navbar() {
         setTotal(total)
         setTotalQuantity(totalQuantity)
     }, [cart])
-
 
     function setFixed() {
         if (window.scrollY >= 200) {

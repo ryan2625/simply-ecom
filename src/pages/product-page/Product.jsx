@@ -7,7 +7,17 @@ import CheckIcon from '@mui/icons-material/Check';
 
 function Product() {
 
+  //TODO : Extract changing state into reducer function 
+
+  //BUG: Changing state
+
   const confirmation = useRef(null)
+
+  const image1 = useRef(null)
+
+  const image2 = useRef(null)
+
+  const image3 = useRef(null)
 
   const { product } = useParams()
 
@@ -17,9 +27,11 @@ function Product() {
 
   const [added, setAdded] = useState(false)
 
-  const item = items[product]
+  const [item, setItem] = useState(items[product])
 
   const [price, setPrice] = useState(item.price)
+
+  const [imageShow, setImageShow] = useState(item.img)
 
   function setQuantityFunct(val) {
     if (quantity === 1 && val === -1) {
@@ -33,6 +45,18 @@ function Product() {
     setPrice(price => (item.price * (quantity + val)))
   }
 
+  /**We could store previous ref and then remove class name there, but since
+   * there are only 3 images, its not that inefficient to remove the class
+   * from all 3 instead
+   */
+
+  function onMouse(image, ref){
+    image1.current.className = " "
+    image2.current.className = " "
+    image3.current.className = " "
+    ref.current.className = "outline"
+    setImageShow(image)
+  }
   /**
    *  This method adds the new item to the cart. I also show the
    *  confirmation modal telling the user that they have successfully
@@ -62,6 +86,12 @@ function Product() {
   // Don't ask me about how efficient this algo is... at least I didn't use chatGPT for this project (:
 
   useEffect(() => {
+    console.log("SETTING PARAMS")
+    setItem(items[product])
+    setPrice(items[product].price)
+    setQuantity(1)
+    setImageShow(items[product].img)
+    
     var accurateCart = []
     var quantityCart = []
     cart.map((item) =>{
@@ -83,10 +113,7 @@ function Product() {
       }
     })
     setCart(newCart)
-
-    
-
-}, [added])
+}, [added, product])
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -99,10 +126,17 @@ function Product() {
       </div>
       <div className="item-container">
         {/*<h1>{item.description}</h1>*/}
-        <Link to="/categories">
+        <div className="image-options">
+        <Link id="back-categories" to="/categories">
           &#60;- Back to Categories
         </Link>
-        <img src={item.img} alt="" />
+          <img src={imageShow} alt="" />
+          <div className="other-images">
+            <img ref={image1} src={item.img} onMouseEnter={() => onMouse(item.img, image1)} alt="" />
+            <img ref={image2} src={[item.otherImgs[0]]} onMouseEnter={() => onMouse([item.otherImgs[0]], image2)} alt="" />
+            <img ref={image3} src={[item.otherImgs[1]]} onMouseEnter={() => onMouse([item.otherImgs[1]], image3)} alt="" />
+          </div>
+          </div>
         <div className="item-info">
           <h1>{item.description}</h1>
           <p>{item.specs}</p>
