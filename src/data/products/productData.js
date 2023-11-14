@@ -62,7 +62,7 @@ import Comfy2 from "../img/productImages/products/otherProducts/comfy2.webp";
 export const items = [
   {
     id: 1,
-    category: "chair",
+    category: "Chairs",
     img: Img1,
     description: "Little Armchair Sheepskin",
     price: 986,
@@ -75,7 +75,7 @@ export const items = [
   },
   {
     id: 2,
-    category: "kitchen",
+    category: "Kitchen",
     img: Img2,
     description: "Pop-Up Toaster",
     price: 45,
@@ -88,7 +88,7 @@ export const items = [
   },
   {
     id: 3,
-    category: "lamp",
+    category: "Lamps",
     img: Img3,
     description: "Lamp Light Blue",
     price: 79,
@@ -101,7 +101,7 @@ export const items = [
   },
   {
     id: 4,
-    category: "furniture",
+    category: "Furniture",
     img: Img4,
     description: "Pulp Unit - 5 Compartments",
     price: 254,
@@ -114,7 +114,7 @@ export const items = [
   },
   {
     id: 5,
-    category: "lamp",
+    category: "Lamps",
     img: Img5,
     description: "Golden Modern Light",
     price: 189,
@@ -127,7 +127,7 @@ export const items = [
   },
   {
     id: 6,
-    category: "skin-care",
+    category: "Skin-care",
     img: Img6,
     description: "Body Oil 200ml",
     price: 67,
@@ -140,7 +140,7 @@ export const items = [
   },
   {
     id: 7,
-    category: "lamp",
+    category: "Lamp",
     img: Img7,
     description: "Black and White Lamp",
     price: 220,
@@ -153,7 +153,7 @@ export const items = [
   },
   {
     id: 8,
-    category: "furniture",
+    category: "Furniture",
     img: Img8,
     description: "Gejst Shelf A Black Ash/Black",
     price: 115,
@@ -166,7 +166,7 @@ export const items = [
   },
   {
     id: 9,
-    category: "furniture",
+    category: "Furniture",
     img: Img9,
     description: "Cube Lolo Vase Black",
     price: 161,
@@ -179,7 +179,7 @@ export const items = [
   },
   {
     id: 10,
-    category: "chair",
+    category: "Chair",
     img: Img10,
     description: "Traditional Armchair",
     price: 89,
@@ -192,7 +192,7 @@ export const items = [
   },
   {
     id: 11,
-    category: "lamp",
+    category: "Lamp",
     img: Img11,
     description: "The Sun Pendant Black",
     price: 160,
@@ -205,7 +205,7 @@ export const items = [
   },
   {
     id: 12,
-    category: "lamp",
+    category: "Lamp",
     img: Img12,
     description: "Simple Golden Lamp",
     price: 220,
@@ -218,7 +218,7 @@ export const items = [
   },
   {
     id: 13,
-    category: "skin-care",
+    category: "Skin-care",
     img: Img13,
     description: "Unbleached Cotton Pads 180",
     price: 33,
@@ -231,7 +231,7 @@ export const items = [
   },
   {
     id: 14,
-    category: "chair",
+    category: "Chair",
     img: Img14,
     description: "Oak Spanish Chair",
     price: 520,
@@ -257,7 +257,7 @@ export const items = [
   },
   {
     id: 16,
-    category: "electronic",
+    category: "Electronics",
     img: Img16,
     description: "Anti Dark Light",
     price: 120,
@@ -270,7 +270,7 @@ export const items = [
   },
   {
     id: 17,
-    category: "lamp",
+    category: "Lamp",
     img: Img17,
     description: "Table Lamp",
     price: 75,
@@ -283,7 +283,7 @@ export const items = [
   },
   {
     id: 18,
-    category: "lamp",
+    category: "Lamp",
     img: Img18,
     description: "Mat Black Lamp",
     price: 175,
@@ -296,7 +296,7 @@ export const items = [
   },
   {
     id: 19,
-    category: "chair",
+    category: "Chair",
     img: Img19,
     description: "Comfy Chair",
     price: 119,
@@ -309,7 +309,7 @@ export const items = [
   },
   {
     id: 20,
-    category: "skin-care",
+    category: "Skin-care",
     img: Img20,
     description: "Body Oil 50ml",
     price: 45,

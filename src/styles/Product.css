@@ -3,6 +3,10 @@
     display: flex;
     align-items: center;
 }
+.item-card{
+    display: flex;
+    flex-direction: column;
+}
 
 .item-container{
     max-width: 1200px;
@@ -120,6 +124,10 @@
 
 .outline { 
     border: 1px solid black;
+}
+
+.specs{
+    flex: 1 1 100%
 }
 
 @keyframes sliding {

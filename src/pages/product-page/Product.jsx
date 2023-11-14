@@ -9,7 +9,7 @@ function Product() {
 
   //TODO : Extract changing state into reducer function 
 
-  //BUG: Changing state
+  //BUG: Changing state (Fixed...?)
 
   const confirmation = useRef(null)
 
@@ -86,12 +86,10 @@ function Product() {
   // Don't ask me about how efficient this algo is... at least I didn't use chatGPT for this project (:
 
   useEffect(() => {
-    console.log("SETTING PARAMS")
     setItem(items[product])
     setPrice(items[product].price)
     setQuantity(1)
     setImageShow(items[product].img)
-    
     var accurateCart = []
     var quantityCart = []
     cart.map((item) =>{
@@ -124,6 +122,7 @@ function Product() {
       <div className="confirmation" ref={confirmation}>
         <h4>Added to cart</h4>  <span><CheckIcon /></span>
       </div>
+      <div className="item-card">
       <div className="item-container">
         {/*<h1>{item.description}</h1>*/}
         <div className="image-options">
@@ -149,6 +148,12 @@ function Product() {
           </div>
           <button onClick={addCart}>Add to Cart</button>
         </div>
+      </div>
+      <div className="specs">
+        <li>{item.texture}</li>
+        <li>{item.weight}</li>
+        <li>{item.size}</li>
+      </div>
       </div>
     </div>
   )

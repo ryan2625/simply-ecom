@@ -14,8 +14,11 @@ function Categories() {
 
   const [products, setProducts] = useState(items)
 
+  const [category, setCategoryType] = useState("All")
+
   useEffect(() => {
     if (categories === null) {
+      console.log(categories)
       window.scrollTo(0,0);
       return
     } else {
@@ -28,12 +31,14 @@ function Categories() {
 
   function handleFilter(categoryType) {
     if (categoryType === "All") {
+      setCategoryType("All")
       return setProducts(items)
     }
     const categoryFilter = items.filter((item) => {
       return item.category === categoryType
     })
     setProducts(categoryFilter)
+    setCategoryType(categoryType)
   }
 
 
@@ -43,19 +48,19 @@ function Categories() {
         <img src={image1} alt="" />
       </div>
       <div className="shop-by-header">
-        <h1>Shop By Category</h1>
+        <h1>{category}</h1>
       </div>
       <ul className='uling'>
         <Link to="/">
           &#60;- Home
         </Link>
         <li onClick={() => handleFilter("All")}>All</li>
-        <li onClick={() => handleFilter("furniture")}>Furniture</li>
-        <li onClick={() => handleFilter("skin-care")}>Skincare</li>
-        <li onClick={() => handleFilter("kitchen")}>Kitchen</li>
-        <li onClick={() => handleFilter("electronic")}>Electronics</li>
-        <li onClick={() => handleFilter("lamp")}>Lamps</li>
-        <li onClick={() => handleFilter("chair")}>Chairs</li>
+        <li onClick={() => handleFilter("Furniture")}>Furniture</li>
+        <li onClick={() => handleFilter("Skin-care")}>Skincare</li>
+        <li onClick={() => handleFilter("Kitchen")}>Kitchen</li>
+        <li onClick={() => handleFilter("Electronics")}>Electronics</li>
+        <li onClick={() => handleFilter("Lamps")}>Lamps</li>
+        <li onClick={() => handleFilter("Chairs")}>Chairs</li>
       </ul>
       <div className="product-grid" ref={gridRef}>
         {products.map((item, index) => {

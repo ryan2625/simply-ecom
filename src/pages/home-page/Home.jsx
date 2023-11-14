@@ -26,25 +26,25 @@ function Home() {
             <div className="home-grid">
                 <div className="home">
                     <Link to="/categories">
-                        <div className="filter" onClick={() => setCategory("furniture")}></div>
+                        <div className="filter" onClick={() => setCategory("Furniture")}></div>
                     </Link>
                     <p>Make your house, home</p>
                 </div>
                 <div className="skin">
                     <Link to="/categories">
-                    <div className="filter" onClick={() => setCategory("skin-care")}></div>
+                    <div className="filter" onClick={() => setCategory("Skin-care")}></div>
                     </Link>
                     <p>Skincare</p>
                 </div>
                 <div className="kitchen">
                     <Link to="/categories">
-                    <div className="filter" onClick={() => setCategory("kitchen")}></div>
+                    <div className="filter" onClick={() => setCategory("Kitchen")}></div>
                     </Link>
                     <p>Kitchen</p>
                 </div>
                 <div className="electronics">
                     <Link to="/categories">
-                    <div className="filter" onClick={() => setCategory("electronic")}></div>
+                    <div className="filter" onClick={() => setCategory("Electronics")}></div>
                     </Link>
                     <p>Electronics</p>
                 </div>
