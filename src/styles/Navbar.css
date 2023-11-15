@@ -74,13 +74,21 @@ nav > ul > li:nth-child(3){
     height: 100%;
     background-color: white;
     transform: translateX(0%);
-    overflow-y: scroll;
-    overflow-X: hidden;
 }
 
 .sidebar-hidden{
+    transition: all .3s ease-in-out;
+    z-index: 1001;
+    top: 0;
+    right: 0;
+    position: fixed;
+    width: 500px;
+    height: 100%;
+    background-color: white;
     transform: translateX(100%);
     transition: all .3s ease-in-out;
+    overflow-y: scroll;
+    overflow-X: hidden;
 }
 
 .shopping-cart-list{

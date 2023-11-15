@@ -59,7 +59,7 @@ function Navbar() {
     return (<>
         <div className='overflower'>
             <div className={shown ? "overlay" : "overlay none"}></div>
-            <div className={shown ? "sidebar" : "sidebar sidebar-hidden"}>
+            <div className={shown ? "sidebar" : "sidebar-hidden"}>
                 <h1 id="shopping-header">Your Shopping Cart</h1>
                 <Close onClick={() => setShown(!shown)} id="closer" />
                 <div className="shopping-cart-list">
@@ -121,7 +121,7 @@ function Navbar() {
             </div>
         </div>
         <div className="mobile">
-            <div className={"navbar " + (fix ?  "navbar-default" : "navbar-scrolled")}>
+            <div className={"navbar " + (fix ? "navbar-scrolled" : "navbar-default")}>
                 <nav>
                     <Link to="/">
                         <img src={logo} alt="" />
