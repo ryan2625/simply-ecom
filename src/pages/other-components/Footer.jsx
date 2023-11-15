@@ -13,10 +13,10 @@ function Footer() {
                 SHOP
             </h1>
             <ul>
-                <li><a href=""className='effecter'>Build & Price</a></li>
-                <li><a href=""className='effecter'>Search Inventory</a></li>
-                <li><a href=""  className='effecter'>Get a Quote</a></li>
-                <li><a href="" className='effecter'>Trade-in Value</a></li>
+                <li><a href=""className='effecter'>Design Services</a></li>
+                <li><a href=""className='effecter'>Digital Catalog</a></li>
+                <li><a href=""  className='effecter'>Store Locator</a></li>
+                <li><a href="" className='effecter'>Warranty</a></li>
             </ul>
             </div>
         </div>
@@ -27,10 +27,10 @@ function Footer() {
                 FINANCING
             </h1>
         <ul>
-                <li><a href="" className='effecter'>Options</a></li>
+                <li><a href="" className='effecter'>Price Match</a></li>
                 <li><a href="" className='effecter'>Ownership</a></li>
-                <li><a href="" className='effecter'>Lorem Ipsum</a></li>
-                <li><a href="" className='effecter'>Lorem Dolor</a></li>
+                <li><a href="" className='effecter'>FAQ</a></li>
+                <li><a href="" className='effecter'>Lease to Own</a></li>
             </ul>
         </div>
         </div>

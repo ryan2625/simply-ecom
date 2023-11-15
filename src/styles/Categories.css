@@ -5,7 +5,6 @@
 .categories-banner{
     width: 80%;
     max-width: 1200px;
-    aspect-ratio: 655/282;
     display: grid;
     place-items: center;
     margin: 0 auto;
@@ -15,6 +14,7 @@
     width: 100%;
     max-width: 1000px;
     margin: 2rem auto;
+    aspect-ratio: 655/282;
 }
 
 .shop-by-header{

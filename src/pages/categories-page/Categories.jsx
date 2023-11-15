@@ -43,7 +43,7 @@ function Categories() {
 
   return (
     <div className='categories'>
-      <div className="categories-banner">
+      <div className="categories-banner" ref={gridRef}>
         <img src={image1} alt="" />
       </div>
       <div className="shop-by-header">
@@ -61,7 +61,7 @@ function Categories() {
         <li onClick={() => handleFilter("Lamps")}>Lamps</li>
         <li onClick={() => handleFilter("Chairs")}>Chairs</li>
       </ul>
-      <div className="product-grid" ref={gridRef}>
+      <div className="product-grid">
         {products.map((item, index) => {
           return <Products key={index} price={item.price} name={item.description} img={item.img} path={item.id - 1} />
         })}

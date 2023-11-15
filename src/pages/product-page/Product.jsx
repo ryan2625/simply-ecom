@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { items } from '../../data/products/productData'
 import { useCart } from '../../contexts/cartContext'
+import ProductSlider from '../other-components/ProductSlider'
 import "../../styles/Product.css"
 import CheckIcon from '@mui/icons-material/Check';
 
@@ -86,6 +87,7 @@ function Product() {
   // Don't ask me about how efficient this algo is... at least I didn't use chatGPT for this project (:
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     setItem(items[product])
     setPrice(items[product].price)
     setQuantity(1)
@@ -154,6 +156,7 @@ function Product() {
         <li>Weight: {item.weight}</li>
         <li>Dimensions: {item.size}</li>
       </div>
+      <ProductSlider />
       </div>
     </div>
   )

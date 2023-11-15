@@ -1,10 +1,8 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { useCategory } from '../../contexts/categoryContext'
 import { items } from '../../data/products/productData';
-import Products from "../other-components/Products"
-import '@splidejs/react-splide/css'
+import ProductSlider from '../other-components/ProductSlider'
 import "../../styles/Home.css"
 import image0 from "../../data/img/bannerImages/banner4.webp"
 import image1 from "../../data/img/bannerImages/banner1.jpg"
@@ -17,8 +15,6 @@ function Home() {
     }, [])
 
     const { category, setCategory } = useCategory()
-
-    const featuredItems = items.slice(-10);
 
     return (
         <div className='home-container'>
@@ -49,33 +45,7 @@ function Home() {
                 </div>
             </div>
 
-            <div className="products-slider">
-                <div className="headliner">
-                    <h1>Featured Products</h1>
-                </div>
-                <Splide aria-label="My Favorite Images"
-                    options={{
-                        perPage: 5,
-                        perMove: 1,
-                        gap: '1rem',
-                        rewind: false,
-                        breakpoints: {
-                            1100: {
-                                perPage: 4,
-                            },
-                            700: {
-                                perPage: 2,
-                            },
-                        }
-                    }}>
-                    {featuredItems.map((item, index) => {
-                        return (<SplideSlide>
-                            <Products key={index} price={item.price} name={item.description} img={item.img} path={item.id - 1} />
-                        </SplideSlide>
-                        )
-                    })}
-                </Splide>
-            </div>
+            <ProductSlider />
 
             <div className="featured-products">
                 <div className="description">
