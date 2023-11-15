@@ -87,7 +87,6 @@ function Product() {
   // Don't ask me about how efficient this algo is... at least I didn't use chatGPT for this project (:
 
   useEffect(() => {
-    window.scrollTo(0, 0)
     setItem(items[product])
     setPrice(items[product].price)
     setQuantity(1)

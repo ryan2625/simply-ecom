@@ -295,6 +295,11 @@ nav > ul > li:nth-child(3){
     nav{
         width: 90%;
     }
+
+    #label-cart{
+        top:66%;
+    }
+    
 }
 
 @media (max-width: 500px){
