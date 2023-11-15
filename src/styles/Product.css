@@ -198,4 +198,15 @@
     .specs > li{
         padding: .5rem 1rem;
     }
+
+    .item-info > p{
+        font-size: 19px;
+        font-weight: 500;
+        text-indent: 0rem;
+
+    }
+
+    .item-info > h1 { 
+        font-size: 25px;
+    }
 }
