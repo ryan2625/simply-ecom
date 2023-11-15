@@ -1,5 +1,5 @@
 nav {
-    width: 60%;
+    width: 65%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -169,6 +169,7 @@ nav > ul > li:nth-child(3){
 
 .shopping-icon{
     position: relative;
+    cursor: pointer;
 }
 
 .shopping-icon > p{
@@ -185,6 +186,10 @@ nav > ul > li:nth-child(3){
 
 .shopping-icon > p > span {
     margin-left: 4px;
+}
+
+.mobile{
+    display: none;
 }
 
 #empty-shopping{
@@ -218,4 +223,82 @@ nav > ul > li:nth-child(3){
    font-weight: 600;
    letter-spacing: 1px;
    text-decoration: underline;
+}
+
+@media (max-width: 1200px){
+    nav > a > img {
+        width: 300px;
+    }
+
+    .desktop{
+        display: none;
+    }
+
+    .mobile{
+        display: block;
+    }
+
+    .mobile-menu{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        transform: translateY(100%);
+        height: 0px;
+        background-color: #ececec;
+        border-top: 2px solid grey;
+        transition: all .3s ease-in-out;
+        z-index: -9999;
+    }
+
+    .mob-items{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        list-style: none;
+        gap: 2rem;
+        text-decoration: underline;
+        opacity: 1 !important;
+        transition: opacity .5s ease-in-out;
+    }
+
+    .translated{
+        height: 200px;
+        transition: all .3s ease-in-out;
+    }
+
+    .none2{
+        opacity: 0;
+    }
+
+    #menu{
+        cursor: pointer;
+    }
+
+    nav{
+        width: 75%;
+    }
+}
+
+@media (max-width: 700px){
+    nav > a > img {
+        width: 230px;
+    }
+
+    nav > ul{
+        padding-inline-start: 0px;
+    }
+
+    nav{
+        width: 90%;
+    }
+}
+
+@media (max-width: 500px){
+    .sidebar{
+        width: 100%;
+    }
 }

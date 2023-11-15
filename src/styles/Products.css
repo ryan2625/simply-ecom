@@ -22,3 +22,15 @@
     position: absolute;
     top: -20px;
 }
+
+@media (max-width: 900px){
+    .prod-info > h2{
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 500px){
+    .prod-info > h2{
+        font-size: 16px;
+    }
+}

@@ -4,6 +4,7 @@
 
 .categories-banner{
     width: 80%;
+    max-width: 1200px;
     aspect-ratio: 655/282;
     display: grid;
     place-items: center;
@@ -24,6 +25,7 @@
 
 .uling{
     position: relative;
+    padding-inline-start: 0;
 }
 
 .uling > a {
@@ -66,4 +68,23 @@
 
 .product-grid > *{
     width: 25%;
+}
+
+@media (max-width: 900px){
+    .uling{
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem !important;
+    }
+    .uling > a{
+        position: static;
+        align-self: center;
+        justify-self: center;
+    }
+}
+
+@media (max-width: 650px){
+    .product-grid > *{
+        width: 45%;
+    }
 }

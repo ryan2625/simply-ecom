@@ -150,9 +150,9 @@ function Product() {
         </div>
       </div>
       <div className="specs">
-        <li>{item.texture}</li>
-        <li>{item.weight}</li>
-        <li>{item.size}</li>
+        <li>Texture: {item.texture}</li>
+        <li>Weight: {item.weight}</li>
+        <li>Dimensions: {item.size}</li>
       </div>
       </div>
     </div>

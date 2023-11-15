@@ -1,7 +1,7 @@
 .product-page{
     margin-top: 130px;
     display: flex;
-    align-items: center;
+    justify-content: center;
 }
 .item-card{
     display: flex;
@@ -127,7 +127,16 @@
 }
 
 .specs{
-    flex: 1 1 100%
+    flex: 1 1 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.specs > li{
+    list-style: none;
+    padding: 1.25rem 3rem;
+    background-color: #e8e8e8;
+    margin-bottom: 2rem;
 }
 
 @keyframes sliding {

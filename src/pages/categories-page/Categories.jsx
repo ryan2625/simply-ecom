@@ -18,7 +18,6 @@ function Categories() {
 
   useEffect(() => {
     if (categories === null) {
-      console.log(categories)
       window.scrollTo(0,0);
       return
     } else {

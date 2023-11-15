@@ -7,6 +7,7 @@ import shopping from "./3385483.webp"
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Close from '@mui/icons-material/Close';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import MenuIcon from '@mui/icons-material/Menu';
 
 function Navbar() {
 
@@ -19,6 +20,8 @@ function Navbar() {
     const [total, setTotal] = useState(0)
 
     const [totalQuantity, setTotalQuantity] = useState(0)
+
+    const [displayMobile, setDisplay] = useState(false)
 
     //Use REDUCE function here
 
@@ -36,7 +39,7 @@ function Navbar() {
     }, [cart])
 
     function setFixed() {
-        if (window.scrollY >= 200) {
+        if (window.scrollY >= 100) {
             setFix(true)
         } else {
             setFix(false)
@@ -89,31 +92,68 @@ function Navbar() {
                 </div>
             </div>
         </div>
-        <div className={"navbar " + (fix ? "navbar-scrolled" : "navbar-default")}>
-            <nav>
-                <Link to="/">
-                    <img src={logo} alt="" />
-                </Link>
-                <ul>
-                    <li>
-                        <Link to="/">
-                            HOME
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/categories">
-                            CATEGORIES
-                        </Link>
-                    </li>
-                    <li>
-                        {/*We could add conditional rendering to increase the size of the cart size indicator (i.e if 10 items, increase width so the numbers dont overflow.*/}
-                        <div className="shopping-icon">
-                            <p className={(cart.length !== 0) ? "shown" : "emptier"}><span>{totalQuantity}</span></p>
-                            <ShoppingCartIcon onClick={() => setShown(!shown)} />
-                        </div>
-                    </li>
-                </ul>
-            </nav>
+        <div className="desktop">
+            <div className={"navbar " + (fix ? "navbar-scrolled" : "navbar-default")}>
+                <nav>
+                    <Link to="/">
+                        <img src={logo} alt="" />
+                    </Link>
+                    <ul>
+                        <li>
+                            <Link to="/">
+                                HOME
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/categories">
+                                CATEGORIES
+                            </Link>
+                        </li>
+                        <li>
+                            {/*We could add conditional rendering to increase the size of the cart size indicator (i.e if 100 items, increase width so the numbers dont overflow.*/}
+                            <div className="shopping-icon">
+                                <p className={(cart.length !== 0) ? "shown" : "emptier"}><span>{totalQuantity}</span></p>
+                                <ShoppingCartIcon onClick={() => setShown(!shown)} />
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div className="mobile">
+            <div className={"navbar " + (fix ?  "navbar-default" : "navbar-scrolled")}>
+                <nav>
+                    <Link to="/">
+                        <img src={logo} alt="" />
+                    </Link>
+                    <ul>
+                        <li>
+                            {/*We could add conditional rendering to increase the size of the cart size indicator (i.e if 100 items, increase width so the numbers dont overflow.*/}
+                            <div className="shopping-icon">
+                                <p className={(cart.length !== 0) ? "shown" : "emptier"}><span>{totalQuantity}</span></p>
+                                <ShoppingCartIcon onClick={() => setShown(!shown)} />
+                            </div>
+                        </li>
+                        <li id="menu" onClick={() => setDisplay(!displayMobile)}>
+                            <MenuIcon></MenuIcon>
+                        </li>
+                    </ul>
+                </nav>
+                <div className={displayMobile ?" mobile-menu translated" : "mobile-menu"}>
+                    <div className={displayMobile ?  "none2 mob-items" : "none2" } >
+                        <li>
+                            <Link to="/" onClick={() => setDisplay(!displayMobile)}>
+                                HOME
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/categories" onClick={() => setDisplay(!displayMobile)}>
+                                CATEGORIES
+                            </Link>
+                        </li>
+                    </div>
+                </div>
+            </div>
         </div>
     </>
     )
