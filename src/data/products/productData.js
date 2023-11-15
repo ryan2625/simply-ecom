@@ -140,7 +140,7 @@ export const items = [
   },
   {
     id: 7,
-    category: "Lamp",
+    category: "Lamps",
     img: Img7,
     description: "Black and White Lamp",
     price: 220,
@@ -179,7 +179,7 @@ export const items = [
   },
   {
     id: 10,
-    category: "Chair",
+    category: "Chairs",
     img: Img10,
     description: "Traditional Armchair",
     price: 89,
@@ -192,7 +192,7 @@ export const items = [
   },
   {
     id: 11,
-    category: "Lamp",
+    category: "Lamps",
     img: Img11,
     description: "The Sun Pendant Black",
     price: 160,
@@ -205,7 +205,7 @@ export const items = [
   },
   {
     id: 12,
-    category: "Lamp",
+    category: "Lamps",
     img: Img12,
     description: "Simple Golden Lamp",
     price: 220,
@@ -231,7 +231,7 @@ export const items = [
   },
   {
     id: 14,
-    category: "Chair",
+    category: "Chairs",
     img: Img14,
     description: "Oak Spanish Chair",
     price: 520,
@@ -244,7 +244,7 @@ export const items = [
   },
   {
     id: 15,
-    category: "chair",
+    category: "Chairs",
     img: Img15,
     description: "Copenhagen Armchair",
     price: 330,
@@ -270,7 +270,7 @@ export const items = [
   },
   {
     id: 17,
-    category: "Lamp",
+    category: "Lamps",
     img: Img17,
     description: "Table Lamp",
     price: 75,
@@ -283,7 +283,7 @@ export const items = [
   },
   {
     id: 18,
-    category: "Lamp",
+    category: "Lamps",
     img: Img18,
     description: "Mat Black Lamp",
     price: 175,
@@ -296,7 +296,7 @@ export const items = [
   },
   {
     id: 19,
-    category: "Chair",
+    category: "Chairs",
     img: Img19,
     description: "Comfy Chair",
     price: 119,
