@@ -6,12 +6,15 @@
 .item-card{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    width: 80%;
 }
 
 .item-container{
     max-width: 1200px;
     display: flex;
-    margin: 2rem auto;
     background-color: #e8e8e8;
     position: relative;
 }
@@ -23,6 +26,7 @@
     gap: 1rem;
     justify-content: space-between;
     height: 80%;
+    width: 70%;
 }
 
 .image-options{
@@ -153,4 +157,45 @@
     text-decoration: underline;
     font-size: larger;
     padding: 1rem;
+}
+
+@media (max-width: 980px){
+    .item-container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-options{
+        width: 100%;
+        order: 2;
+    }
+
+    .item-info > *{
+        text-align: center;
+    }
+
+    .item-info{
+        padding: .5rem;
+        width: 100%;
+    }
+
+    .quantity > *{
+        font-size: 20px !important;
+    }
+
+    .quantity{
+        gap: 1rem;
+    }
+
+    .quantity > button{
+        width: 35px !important;
+    }
+
+    .specs{
+        gap: .5rem;
+    }
+
+    .specs > li{
+        padding: .5rem 1rem;
+    }
 }
