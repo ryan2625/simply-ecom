@@ -29,8 +29,6 @@ function Navbar() {
 
     const [displayMobile, setDisplay] = useState(false)
 
-    //Use REDUCE function here
-
     useEffect(() => {
         var price = 0
         var total = 0
@@ -105,12 +103,12 @@ function Navbar() {
                         <img src={logo} alt="" />
                     </Link>
                     <ul>
-                        <li>
+                        <li className='hover-nav'>
                             <Link to="/">
                                 HOME
                             </Link>
                         </li>
-                        <li>
+                        <li className='hover-nav'>
                             <Link to="/categories">
                                 CATEGORIES
                             </Link>
@@ -119,7 +117,7 @@ function Navbar() {
                             {/*We could add conditional rendering to increase the size of the cart size indicator (i.e if 100 items, increase width so the numbers dont overflow.*/}
                             <div className="shopping-icon">
                                 <p className={(cart.length !== 0) ? "shown" : "emptier"}><span>{totalQuantity}</span></p>
-                                <ShoppingCartIcon onClick={() => setShown(!shown)} />
+                                <ShoppingCartIcon onClick={() => setShown(!shown)}/>
                             </div>
                         </li>
                     </ul>
