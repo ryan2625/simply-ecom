@@ -1,3 +1,11 @@
+/**
+ * Reducer function for Product.jsx page
+ * 
+ * @param {*} tasks
+ * @param {*} action
+ * 
+ */
+
 export default function productReducer(tasks, action) {
     switch (action.type) {
         case "RESET":
