@@ -74,6 +74,8 @@ nav > ul > li:nth-child(3){
     height: 100%;
     background-color: white;
     transform: translateX(0%);
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .sidebar-hidden{
