@@ -51,7 +51,7 @@ function Product() {
    * from all 3 instead
    */
 
-  function onMouse(image, ref){
+  function onMouse(image, ref) {
     image1.current.className = " "
     image2.current.className = " "
     image3.current.className = " "
@@ -79,7 +79,7 @@ function Product() {
     setCart([...cart, newItem])
     confirmation.current.className = "confirmation"
     setTimeout(() => {
-      confirmation.current.className = "confirmation confirmation-show" 
+      confirmation.current.className = "confirmation confirmation-show"
     }, 50)
     setAdded(!added)
   }
@@ -93,18 +93,18 @@ function Product() {
     setImageShow(items[product].img)
     var accurateCart = []
     var quantityCart = []
-    cart.map((item) =>{
-        if (!(accurateCart.includes(item.item.description))){
-            accurateCart.push(item.item.description) 
-            quantityCart.push(item.quantity)
-        } else{
-            quantityCart[accurateCart.indexOf(item.item.description)] += item.quantity
-        }
+    cart.map((item) => {
+      if (!(accurateCart.includes(item.item.description))) {
+        accurateCart.push(item.item.description)
+        quantityCart.push(item.quantity)
+      } else {
+        quantityCart[accurateCart.indexOf(item.item.description)] += item.quantity
+      }
     })
     var newCart = []
     var i = 0
-    cart.forEach((item, index) =>{
-      if (!(newCart.some(e => e.item.description === item.item.description))){
+    cart.forEach((item, index) => {
+      if (!(newCart.some(e => e.item.description === item.item.description))) {
         newCart.push(item)
       } else {
         i = newCart.findIndex((e => e.item.description === item.item.description))
@@ -112,7 +112,7 @@ function Product() {
       }
     })
     setCart(newCart)
-}, [added, product])
+  }, [added, product])
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -124,38 +124,38 @@ function Product() {
         <h4>Added to cart</h4>  <span><CheckIcon /></span>
       </div>
       <div className="item-card">
-      <div className="item-container">
-        {/*<h1>{item.description}</h1>*/}
-        <div className="image-options">
-        <Link id="back-categories" to="/categories">
-          &#60;- Back to Categories
-        </Link>
-          <img src={imageShow} alt="" />
-          <div className="other-images">
-            <img ref={image1} src={item.img} onMouseEnter={() => onMouse(item.img, image1)} alt="" />
-            <img ref={image2} src={[item.otherImgs[0]]} onMouseEnter={() => onMouse([item.otherImgs[0]], image2)} alt="" />
-            <img ref={image3} src={[item.otherImgs[1]]} onMouseEnter={() => onMouse([item.otherImgs[1]], image3)} alt="" />
+        <div className="item-container">
+          {/*<h1>{item.description}</h1>*/}
+          <div className="image-options">
+            <Link id="back-categories" to="/categories">
+              &#60;- Back to Categories
+            </Link>
+            <img src={imageShow} alt="" />
+            <div className="other-images">
+              <img ref={image1} src={item.img} onMouseEnter={() => onMouse(item.img, image1)} alt="" />
+              <img ref={image2} src={[item.otherImgs[0]]} onMouseEnter={() => onMouse([item.otherImgs[0]], image2)} alt="" />
+              <img ref={image3} src={[item.otherImgs[1]]} onMouseEnter={() => onMouse([item.otherImgs[1]], image3)} alt="" />
+            </div>
           </div>
+          <div className="item-info">
+            <h1>{item.description}</h1>
+            <p>{item.specs}</p>
+            <div className="quantity">
+              <p>Quantity: </p>
+              <button onClick={() => setQuantityFunct(-1)}>-</button>
+              <p>{quantity}</p>
+              <button onClick={() => setQuantityFunct(1)}>+</button>
+              <p>${price}</p>
+            </div>
+            <button onClick={addCart}>Add to Cart</button>
           </div>
-        <div className="item-info">
-          <h1>{item.description}</h1>
-          <p>{item.specs}</p>
-          <div className="quantity">
-            <p>Quantity: </p>
-            <button onClick={() => setQuantityFunct(-1)}>-</button>
-            <p>{quantity}</p>
-            <button onClick={() => setQuantityFunct(1)}>+</button>
-            <p>${price}</p>
-          </div>
-          <button onClick={addCart}>Add to Cart</button>
         </div>
-      </div>
-      <div className="specs">
-        <li>Texture: {item.texture}</li>
-        <li>Weight: {item.weight}</li>
-        <li>Dimensions: {item.size}</li>
-      </div>
-      <ProductSlider />
+        <div className="specs">
+          <li>Texture: {item.texture}</li>
+          <li>Weight: {item.weight}</li>
+          <li>Dimensions: {item.size}</li>
+        </div>
+        <ProductSlider />
       </div>
     </div>
   )

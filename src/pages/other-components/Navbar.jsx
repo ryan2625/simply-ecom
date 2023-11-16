@@ -139,8 +139,8 @@ function Navbar() {
                         </li>
                     </ul>
                 </nav>
-                <div className={displayMobile ?" mobile-menu translated" : "mobile-menu"}>
-                    <div className={displayMobile ?  "none2 mob-items" : "none2" } >
+                <div className={displayMobile ? " mobile-menu translated" : "mobile-menu"}>
+                    <div className={displayMobile ? "none2 mob-items" : "none2"} >
                         <li>
                             <Link to="/" onClick={() => setDisplay(!displayMobile)}>
                                 HOME

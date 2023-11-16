@@ -1,9 +1,10 @@
-.product-page{
+.product-page {
     margin-top: 130px;
     display: flex;
     justify-content: center;
 }
-.item-card{
+
+.item-card {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -13,18 +14,18 @@
     width: 80%;
 }
 
-.item-card > *{
+.item-card>* {
     width: 100%;
 }
 
-.item-container{
+.item-container {
     max-width: 1200px;
     display: flex;
     background-color: #e8e8e8;
     position: relative;
 }
 
-.item-info{
+.item-info {
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -34,7 +35,7 @@
     width: 70%;
 }
 
-.image-options{
+.image-options {
     display: flex;
     flex-direction: column;
     width: 30%;
@@ -42,24 +43,24 @@
     padding-right: 1rem;
 }
 
-.image-options > img {
+.image-options>img {
     aspect-ratio: 1/1;
 }
 
-.other-images{
+.other-images {
     margin-top: 2rem;
     display: flex;
     width: 100%;
     justify-content: space-around;
 }
 
-.other-images > *{
+.other-images>* {
     box-sizing: border-box;
     width: 30%;
     object-fit: contain;
 }
 
-.quantity{
+.quantity {
     display: flex;
     gap: 3rem;
     align-self: center;
@@ -67,21 +68,21 @@
     height: 100px;
 }
 
-.quantity > button{
+.quantity>button {
     width: 50px !important;
     height: 50px;
     font-size: 50px;
 }
 
-.quantity > p{
+.quantity>p {
     font-size: 30px;
 }
 
-.quantity > p:nth-child(3){
+.quantity>p:nth-child(3) {
     font-size: 50px;
 }
 
-.item-info > button {
+.item-info>button {
     width: 50%;
     height: 50px;
     color: rgb(0, 0, 0);
@@ -91,14 +92,14 @@
     align-self: center;
 }
 
-.item-info > p{
+.item-info>p {
     font-size: 24px;
     font-weight: 500;
     text-indent: 3rem;
     line-height: 2rem;
 }
 
-.confirmation{
+.confirmation {
     position: fixed;
     top: 15%;
     right: 0%;
@@ -112,7 +113,7 @@
     transform: translateX(175px);
 }
 
-.confirmation > h4{
+.confirmation>h4 {
     color: rgb(0, 0, 0);
     font-weight: 500;
     margin-left: .2rem;
@@ -120,22 +121,22 @@
     color: rgb(255, 255, 255);
 }
 
-.confirmation > span{
+.confirmation>span {
     margin-top: 3px;
     display: block;
     color: rgb(255, 255, 255);
 }
 
-.confirmation-show{
+.confirmation-show {
     transform: translateX(175px);
     animation: sliding 2s ease-in-out;
 }
 
-.outline { 
+.outline {
     border: 1px solid black;
 }
 
-.specs{
+.specs {
     flex: 1 1 100%;
     display: flex;
     justify-content: space-around;
@@ -143,7 +144,7 @@
     gap: 1rem;
 }
 
-.specs > li{
+.specs>li {
     list-style: none;
     padding: 1.25rem 3rem;
     background-color: #e8e8e8;
@@ -151,69 +152,73 @@
 }
 
 @keyframes sliding {
-    0%, 100%{
+
+    0%,
+    100% {
         transform: translateX(175px);
     }
-    25%, 75%{
+
+    25%,
+    75% {
         transform: translateX(0px);
     }
 }
 
-#back-categories{
+#back-categories {
     width: fit-content;
     text-decoration: underline;
     font-size: larger;
     padding: 1rem;
 }
 
-@media (max-width: 980px){
-    .item-container{
+@media (max-width: 980px) {
+    .item-container {
         flex-direction: column;
         align-items: center;
     }
 
-    .image-options{
+    .image-options {
         width: 100%;
         order: 2;
     }
 
-    .item-info > *{
+    .item-info>* {
         text-align: center;
     }
 
-    .item-info{
+    .item-info {
         padding: .5rem;
         width: 100%;
     }
 
-    .quantity > *{
+    .quantity>* {
         font-size: 20px !important;
     }
 
-    .quantity{
+    .quantity {
         gap: 1rem;
     }
 
-    .quantity > button{
+    .quantity>button {
         width: 35px !important;
     }
 
-    .specs{
+    .specs {
         gap: .5rem;
     }
 
-    .specs > li{
+    .specs>li {
         padding: .5rem 1rem;
     }
 
-    .item-info > p{
+    .item-info>p {
         font-size: 19px;
         font-weight: 500;
         text-indent: 0rem;
 
     }
 
-    .item-info > h1 { 
+    .item-info>h1 {
         font-size: 25px;
     }
 }

@@ -1,4 +1,4 @@
-.home-container{
+.home-container {
     max-width: 1300px;
     width: 90%;
     display: flex;
@@ -7,42 +7,42 @@
     margin-top: 130px;
 }
 
-.home-container > div {
+.home-container>div {
     padding: 2rem;
 }
 
-.home-grid{
+.home-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr 1fr;
-    grid-template-areas: 
-    "home home skin top"
-    "home home skin bot";
+    grid-template-areas:
+        "home home skin top"
+        "home home skin bot";
     gap: 1rem;
     min-height: 500px;
 }
 
-.filter{
+.filter {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, .5);
     transition: background-color .3s ease-in-out;
 }
 
-.filter:hover{
+.filter:hover {
     background-color: rgba(0, 0, 0, .35);
     transition: background-color .3s ease-in-out;
 }
 
-.home-grid > div{
+.home-grid>div {
     position: relative;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: rgba(0, 0,0 , .5)
+    background-color: rgba(0, 0, 0, .5)
 }
 
-.home-grid > div > a > p{
+.home-grid>div>a>p {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -72,15 +72,15 @@
     grid-area: bot;
 }
 
-.featured-products{
+.featured-products {
     display: flex;
 }
 
-.featured-products > *{
+.featured-products>* {
     width: 50%;
 }
 
-.description{
+.description {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -89,7 +89,7 @@
     background-color: rgb(222, 222, 222);
 }
 
-.description > a {
+.description>a {
     background-color: black;
     color: white;
     border: none;
@@ -98,80 +98,81 @@
     padding: 1rem 1.5rem;
 }
 
-.finance-banner{
+.finance-banner {
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
 }
 
-.gift{
+.gift {
     background-color: black;
     color: white;
 }
 
-.gift > *{
+.gift>* {
     text-align: center;
     padding: 1rem;
 }
 
-.gift > h1{
+.gift>h1 {
     font-size: calc(2vw + 15px);
     font-weight: 500;
 }
 
-.gift > p{
+.gift>p {
     font-size: calc(1vw + 10px);
     font-weight: 300;
 }
 
-@media (max-width: 930px){
-    .home-grid{
+@media (max-width: 930px) {
+    .home-grid {
         grid-template-areas:
-        "home skin"
-        "bot top";
+            "home skin"
+            "bot top";
         grid-template-columns: 1fr 1fr;
     }
 }
-@media (max-width: 750px){
-    .featured-products{
+
+@media (max-width: 750px) {
+    .featured-products {
         flex-direction: column;
         align-items: center;
         margin-top: 3rem;
     }
 
-    .featured-products > *{
+    .featured-products>* {
         width: 100%;
     }
 
-    .description{
+    .description {
         padding: 1rem;
     }
 
-    .featured-products > img{
+    .featured-products>img {
         width: calc(100% + 2rem);
         max-height: 400px;
         object-fit: cover;
     }
 
-    .finance-banner{
+    .finance-banner {
         padding: 1rem !important;
     }
 }
 
-@media (max-width: 700px){
-    .home-container > div{
+@media (max-width: 700px) {
+    .home-container>div {
         padding: .5rem;
     }
 
-    .finance-banner{
+    .finance-banner {
         width: calc(100% + 1rem);
         align-self: center;
     }
 }
 
-@media (max-width: 650px){
+@media (max-width: 650px) {
 
-    .home-grid > div > a > p{
+    .home-grid>div>a>p {
         font-size: 25px;
         margin: .5rem;
     }

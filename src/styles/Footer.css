@@ -1,43 +1,42 @@
-.footer{
+.footer {
     display: flex;
     height: 300px;
     width: 100%;
     background-color: #2c2c2c
 }
 
-.links1{
+.links1 {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     height: 100%;
     flex-basis: 33%;
-    
+
 }
 
-.align > h1{
+.align>h1 {
     color: white;
     position: relative;
     width: fit-content;
     margin-bottom: 1rem;
 }
 
-.align{
+.align {
     display: flex;
     flex-direction: column;
 }
 
-.align > ul{
+.align>ul {
     list-style: none;
     padding-inline-start: 0px;
 }
 
-.align > ul > li{
-    margin-bottom: .5rem
-    ;
+.align>ul>li {
+    margin-bottom: .5rem;
 }
 
-.shopper::before{
+.shopper::before {
     content: "";
     width: 100%;
     position: absolute;
@@ -49,13 +48,13 @@
 
 
 
-.effecter{
+.effecter {
     position: relative;
     white-space: nowrap;
     color: white !important;
 }
 
-.effecter::before{
+.effecter::before {
     content: "";
     width: 0%;
     position: absolute;
@@ -65,38 +64,38 @@
     color: white;
 }
 
-.effecter:hover::before{
+.effecter:hover::before {
     width: 100%;
 }
 
-.socialIcon{
+.socialIcon {
     transform: scale(2);
     margin: 2rem;
     transition: all 0.5s ease-in-out !important;
     color: white !important;
 }
 
-.socialIcon:hover{
+.socialIcon:hover {
     transform: scale(3);
     transition: all 0.5s ease-in-out;
 }
 
-.socials{
+.socials {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 @media (max-width: 768px) {
-    .socials{
+    .socials {
         flex-direction: column;
     }
 
-    .socialIcon{
+    .socialIcon {
         margin: 1rem;
     }
 
-    .footer{
+    .footer {
         justify-content: space-around;
     }
 }

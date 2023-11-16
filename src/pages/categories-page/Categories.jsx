@@ -18,12 +18,12 @@ function Categories() {
 
   useEffect(() => {
     if (categories === null) {
-      window.scrollTo(0,0);
+      window.scrollTo(0, 0);
       return
     } else {
       handleFilter(categories)
-      const executeScroll = () => gridRef.current.scrollIntoView() 
-      executeScroll()   
+      const executeScroll = () => gridRef.current.scrollIntoView()
+      executeScroll()
       setCategory(null)
     }
   }, [])

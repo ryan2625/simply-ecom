@@ -41,7 +41,7 @@ function Home() {
                     <Link to="/categories">
                         <div className="filter"></div>
                         <p>Electronics</p>
-                        </Link>
+                    </Link>
                 </div>
             </div>
 

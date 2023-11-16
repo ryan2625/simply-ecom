@@ -13,12 +13,12 @@ export const CartProvider = ({ children }) => {
     );
 }
 
-/* This function is used to ensure the context is used within the CategoriesProvider. */
+/* This function is used to ensure the context is used within the CartProvider. */
 
 export const useCart = () => {
     const context = useContext(CartContext);
     if (context === undefined) {
-      throw new Error("useCart must be used within a CategoriesProvider");
+      throw new Error("useCart must be used within a CartProvider");
     }
     return context;
   };
