@@ -6,6 +6,10 @@ import image1 from "../../data/img/bannerImages/banner3.jpg"
 import { items } from '../../data/products/productData'
 import Products from '../other-components/Products'
 
+/**
+ *  Category page holds all different products based on the category selected. 
+ */
+
 function Categories() {
 
   const gridRef = useRef(null)

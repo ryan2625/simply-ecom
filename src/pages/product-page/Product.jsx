@@ -1,4 +1,5 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState, useRef, useReducer } from 'react'
+import productReducer from '../../reducer/ProductReducer'
 import { useParams, Link } from 'react-router-dom'
 import { items } from '../../data/products/productData'
 import { useCart } from '../../contexts/cartContext'
@@ -6,11 +7,16 @@ import ProductSlider from '../other-components/ProductSlider'
 import "../../styles/Product.css"
 import CheckIcon from '@mui/icons-material/Check';
 
+/**
+ * 
+ * Component renders product information based on the product id retrieved from the URL.
+ * Can access this component from the cart, categories page, and the featured products slider.
+ * 
+ * State reducer can be found in ./reducers/ProductReducer.jsx
+ * 
+ */
+
 function Product() {
-
-  //TODO : Extract changing state into reducer function 
-
-  //BUG: Changing state (Fixed...?)
 
   const confirmation = useRef(null)
 
@@ -24,39 +30,47 @@ function Product() {
 
   const { cart, setCart } = useCart()
 
-  const [quantity, setQuantity] = useState(1)
-
   const [added, setAdded] = useState(false)
 
-  const [item, setItem] = useState(items[product])
-
-  const [price, setPrice] = useState(item.price)
-
-  const [imageShow, setImageShow] = useState(item.img)
+  const [state, dispatch] = useReducer(productReducer, {
+    item : items[product],
+    image : items[product].img,
+    price : items[product].price,
+    quantity : 1,
+  })
 
   function setQuantityFunct(val) {
-    if (quantity === 1 && val === -1) {
+    if (state.quantity === 1 && val === -1) {
       return
     }
     if (val === -1) {
-      setQuantity(quantity - 1)
+      dispatch({type : "DECREMENT"})
     } else {
-      setQuantity(quantity + 1)
+      dispatch({type : "INCREMENT"})
     }
-    setPrice(price => (item.price * (quantity + val)))
+    dispatch({type : "SET_PRICE", payload : state.item.price * (state.quantity + val)})
   }
 
   /**We could store previous ref and then remove class name there, but since
    * there are only 3 images, its not that inefficient to remove the class
-   * from all 3 instead
+   * from all 3 instead. This function changes the main picture based on 
+   *  which image you hover.
+   * 
+   * image1 is outlined by default, as it is always displayed first. 
    */
+
+  function resetRef(){
+    image1.current.className = "outline"
+    image2.current.className = " "
+    image3.current.className = " "
+  }
 
   function onMouse(image, ref) {
     image1.current.className = " "
     image2.current.className = " "
     image3.current.className = " "
     ref.current.className = "outline"
-    setImageShow(image)
+    dispatch({type : "SET_IMG", payload : image})
   }
   /**
    *  This method adds the new item to the cart. I also show the
@@ -75,8 +89,10 @@ function Product() {
    */
 
   function addCart() {
-    var newItem = { item, quantity }
-    setCart([...cart, newItem])
+    var tempItem = state.item
+    var tempQuantity = state.quantity
+    var newItem = { item: tempItem, quantity: tempQuantity }
+    setCart([...cart, newItem ])
     confirmation.current.className = "confirmation"
     setTimeout(() => {
       confirmation.current.className = "confirmation confirmation-show"
@@ -84,13 +100,19 @@ function Product() {
     setAdded(!added)
   }
 
-  // Don't ask me about how efficient this algo is... at least I didn't use chatGPT for this project (:
+  /**
+   * 
+   * Useeffect checks if item is in cart. If it isn't it adds it. If it is,
+   * it finds the index of the item and updates its quantity. It also 
+   * makes sure the item information updates when we switch products.
+   * 
+   * Don't ask me about how efficient this algo is... at least I didn't use chatGPT for this project (:
+   * 
+   * */
 
   useEffect(() => {
-    setItem(items[product])
-    setPrice(items[product].price)
-    setQuantity(1)
-    setImageShow(items[product].img)
+    resetRef()
+    dispatch({type : "RESET", payload : items[product]})
     var accurateCart = []
     var quantityCart = []
     cart.map((item) => {
@@ -130,30 +152,30 @@ function Product() {
             <Link id="back-categories" to="/categories">
               &#60;- Back to Categories
             </Link>
-            <img src={imageShow} alt="" />
+            <img src={state.image} alt="" />
             <div className="other-images">
-              <img ref={image1} src={item.img} onMouseEnter={() => onMouse(item.img, image1)} alt="" />
-              <img ref={image2} src={[item.otherImgs[0]]} onMouseEnter={() => onMouse([item.otherImgs[0]], image2)} alt="" />
-              <img ref={image3} src={[item.otherImgs[1]]} onMouseEnter={() => onMouse([item.otherImgs[1]], image3)} alt="" />
+              <img ref={image1} src={items[product].img} onMouseEnter={() => onMouse(items[product].img, image1)} alt="" />
+              <img ref={image2} src={[state.item.otherImgs[0]]} onMouseEnter={() => onMouse([state.item.otherImgs[0]], image2)} alt="" />
+              <img ref={image3} src={[state.item.otherImgs[1]]} onMouseEnter={() => onMouse([state.item.otherImgs[1]], image3)} alt="" />
             </div>
           </div>
           <div className="item-info">
-            <h1>{item.description}</h1>
-            <p>{item.specs}</p>
+            <h1>{state.item.description}</h1>
+            <p>{state.item.specs}</p>
             <div className="quantity">
               <p>Quantity: </p>
               <button onClick={() => setQuantityFunct(-1)}>-</button>
-              <p>{quantity}</p>
+              <p>{state.quantity}</p>
               <button onClick={() => setQuantityFunct(1)}>+</button>
-              <p>${price}</p>
+              <p>${state.price}</p>
             </div>
             <button onClick={addCart}>Add to Cart</button>
           </div>
         </div>
         <div className="specs">
-          <li>Texture: {item.texture}</li>
-          <li>Weight: {item.weight}</li>
-          <li>Dimensions: {item.size}</li>
+          <li>Texture: {state.item.texture}</li>
+          <li>Weight: {state.item.weight}</li>
+          <li>Dimensions: {state.item.size}</li>
         </div>
         <ProductSlider />
       </div>

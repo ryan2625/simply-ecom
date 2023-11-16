@@ -6,13 +6,21 @@ import ProductSlider from '../other-components/ProductSlider'
 import "../../styles/Home.css"
 import image0 from "../../data/img/bannerImages/banner4.webp"
 import image1 from "../../data/img/bannerImages/banner1.jpg"
-import image2 from "../../data/img/bannerImages/banner2.jpg"
+
+/**
+ * Home component that holds the links to different product categories as well
+ * as multiple banners.
+ * 
+ */
 
 function Home() {
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [])
+
+    //Access category info to display the correct category when we 
+    //click the different cards in the home grid.
 
     const { category, setCategory } = useCategory()
 

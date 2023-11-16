@@ -9,6 +9,12 @@ import Close from '@mui/icons-material/Close';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import MenuIcon from '@mui/icons-material/Menu';
 
+/**
+ * Navbar component that holds the links to the different pages as well as
+ * the shopping cart data. 
+ * 
+ */
+
 function Navbar() {
 
     const { cart, setCart } = useCart()

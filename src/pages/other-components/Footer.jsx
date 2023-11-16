@@ -4,6 +4,12 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import TwitterIcon from '@mui/icons-material/Twitter';
+
+/**
+ * Simple footer that holds dummy text.
+ * 
+ */
+
 function Footer() {
     return (
         <div className='footer'>

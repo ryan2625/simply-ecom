@@ -14,7 +14,7 @@ function ProductSlider() {
             <div className="headliner">
                 <h1>Featured Products</h1>
             </div>
-            <Splide aria-label="My Favorite Images"
+            <Splide aria-label="Products"
                 options={{
                     perPage: 5,
                     perMove: 1,
@@ -30,8 +30,8 @@ function ProductSlider() {
                     }
                 }}>
                 {featuredItems.map((item, index) => {
-                    return (<SplideSlide>
-                        <Products key={index} price={item.price} name={item.description} img={item.img} path={item.id - 1} />
+                    return (<SplideSlide key={index}>
+                        <Products price={item.price} name={item.description} img={item.img} path={item.id - 1} />
                     </SplideSlide>
                     )
                 })}
