@@ -26,7 +26,7 @@ function Categories() {
       return
     } else {
       handleFilter(categories)
-      const executeScroll = () => gridRef.current.scrollIntoView()
+      const executeScroll = () => gridRef.current.scrollIntoView({block: "center"})
       executeScroll()
       setCategory(null)
     }
@@ -47,13 +47,13 @@ function Categories() {
 
   return (
     <div className='categories'>
-      <div className="categories-banner" ref={gridRef}>
+      <div className="categories-banner" >
         <img src={image1} alt="" />
       </div>
       <div className="shop-by-header">
         <h1>{category}</h1>
       </div>
-      <ul className='uling'>
+      <ul className='uling' ref={gridRef}>
         <Link to="/">
           &#60;- Home
         </Link>
