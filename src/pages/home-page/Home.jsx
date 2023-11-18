@@ -68,7 +68,7 @@ function Home() {
                 <img src={image0} alt="" />
                 <div className="gift">
                     <h1>$300 Instant Gift</h1>
-                    <p> Save $300 on a mattress and a Tempur-Pedic adjustable base of the same size. Gift automatically added in cart. Combinable with other Tempur-Pedic and Stearns & Foster promotions. Not combinable with storewide offer. Exclusions apply.</p>
+                    <p> Save $300 on any furniture and adjustable base of the same size. Gift automatically added in cart. Combinable with other promotions and Stearns & Foster promotions. Not combinable with storewide offer. Exclusions apply.</p>
                 </div>
             </div>
         </div>
