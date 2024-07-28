@@ -80,7 +80,7 @@ nav>ul>li:nth-child(3) {
 .sidebar-hidden {
     z-index: 1001;
     top: 0;
-    right: -100%;
+    right: -500%;
     position: fixed;
     width: 500px;
     height: 100%;
