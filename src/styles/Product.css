@@ -164,17 +164,30 @@
     }
 }
 
-#back-categories {
+.back-categories {
     width: fit-content;
     text-decoration: underline;
     font-size: larger;
     padding: 1rem;
 }
 
+.bc2 {
+    display: none;
+    margin: 0 auto
+}
+
 @media (max-width: 980px) {
     .item-container {
         flex-direction: column;
         align-items: center;
+    }
+
+    .bc1 {
+        display: none;
+    }
+
+    .bc2 {
+        display: block;
     }
 
     .image-options {

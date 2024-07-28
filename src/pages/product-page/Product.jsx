@@ -149,7 +149,7 @@ function Product() {
         <div className="item-container">
           {/*<h1>{item.description}</h1>*/}
           <div className="image-options">
-            <Link id="back-categories" to="/categories">
+            <Link class="back-categories bc1" to="/categories">
               &#60;- Back to Categories
             </Link>
             <img src={state.image} alt="" />
@@ -160,6 +160,9 @@ function Product() {
             </div>
           </div>
           <div className="item-info">
+          <Link class="back-categories bc2" to="/categories">
+              &#60;- Back to Categories
+            </Link>
             <h1>{state.item.description}</h1>
             <p>{state.item.specs}</p>
             <div className="quantity">

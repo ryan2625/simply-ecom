@@ -33,8 +33,8 @@ function Categories() {
   }, [])
 
   function handleFilter(categoryType) {
-    if (categoryType === "All") {
-      setCategoryType("All")
+    if (categoryType === "All Items") {
+      setCategoryType("All Items")
       return setProducts(items)
     }
     const categoryFilter = items.filter((item) => {
@@ -54,16 +54,15 @@ function Categories() {
         <h1>{category}</h1>
       </div>
       <ul className='uling' ref={gridRef}>
-        <Link to="/">
-          &#60;- Home
-        </Link>
-        <li onClick={() => handleFilter("All")}>All</li>
-        <li onClick={() => handleFilter("Furniture")}>Furniture</li>
-        <li onClick={() => handleFilter("Skin-care")}>Skincare</li>
-        <li onClick={() => handleFilter("Kitchen")}>Kitchen</li>
-        <li onClick={() => handleFilter("Electronics")}>Electronics</li>
-        <li onClick={() => handleFilter("Lamps")}>Lamps</li>
-        <li onClick={() => handleFilter("Chairs")}>Chairs</li>
+        <select id="filter-select" name="Category" onChange={e => handleFilter(e.target.value)} value={category}>
+          <option value="All Items">All Items</option>
+          <option value="Furniture">Furniture</option>
+          <option value="Skin-care">Skincare</option>
+          <option value="Kitchen">Kitchen</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Lamps">Lamps</option>
+          <option value="Chairs">Chairs</option>
+        </select>
       </ul>
       <div className="product-grid">
         {products.map((item, index) => {
