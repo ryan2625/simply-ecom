@@ -65,7 +65,6 @@ nav>ul>li:nth-child(3) {
 }
 
 .sidebar {
-    transition: all .3s ease-in-out;
     z-index: 1001;
     top: 0;
     right: 0;
@@ -73,21 +72,19 @@ nav>ul>li:nth-child(3) {
     width: 500px;
     height: 100%;
     background-color: white;
-    transform: translateX(0%);
+    transition: all .3s ease-in-out;
     overflow-y: scroll;
-    overflow-x: hidden;
+    overflow-X: hidden;
 }
 
 .sidebar-hidden {
-    transition: all .3s ease-in-out;
     z-index: 1001;
     top: 0;
-    right: 0;
+    right: -100%;
     position: fixed;
     width: 500px;
     height: 100%;
     background-color: white;
-    transform: translateX(100%);
     transition: all .3s ease-in-out;
     overflow-y: scroll;
     overflow-X: hidden;
